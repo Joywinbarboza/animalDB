@@ -1,0 +1,48 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+img{
+    height: 500px;
+    width: 500px;
+    border-radius: 50px;
+}
+
+.animal-container-main{
+    display: flex;
+    flex-direction: column;
+    background: grey;
+}
+
+.animal-container{
+    /* background: white; */
+    margin: 20px;
+    border-radius: 25px;
+}
+
+.animal-container:hover{
+    background: white;
+    transition: 2s;
+}
+
+.animal-name{
+    font-size: 100px;
+    font-weight: bold;
+}
+
+.animal-sc-name{
+    font-size: 50px;
+    font-style: italic;
+}
+
+.animal-fact{
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.animal-name, .animal-sc-name, .animal-fact, .animal-image{
+    text-align: center;
+    margin: 20px;
+    padding: 0 60px;
+}

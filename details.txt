@@ -1,0 +1,12 @@
+Open XAMP or in terminal "sudo /opt/lampp/lampp start"
+start apache and mysql
+go to browser and type localhost
+go to myphpadmin to see the database stuff
+
+//For server to run 
+1) cd backend 
+2) npm start
+
+//For react to be displayed in browser
+3) cd frontend
+4) npm run dev

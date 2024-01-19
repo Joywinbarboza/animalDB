@@ -33,6 +33,19 @@ app.get('/animals',(req,res)=>{
     })
 })
 
+app.get('/image',(req,res)=>{
+    //setting sql variable with this query 
+    const sql = "SELECT * FROM `image_test`";
+
+    db.query(sql,(err,data)=>{
+        //if there is an error return a json with the error in it
+        if(err) return res.json(err);
+        
+        //else just return the result json with the data
+        return res.json(data);
+    })
+})
+
 //the port 8081 (i.e: localhost:8081) is made to listen
 app.listen(8081,()=>{
     console.log("listening");

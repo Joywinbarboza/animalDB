@@ -1,0 +1,1 @@
+#this is each pages which come from "/" for example /visit us

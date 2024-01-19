@@ -1,43 +1,19 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react';
 import './App.css';
+import { BrowserRouter, Route, Routes } from "react-router-dom"
+import Navbar from './Components/Navbar';
+import Home from './Components/Home';
+// import Navbar2 from './Components/Navbar2';
 
 function App() {
-
-  const [data, setData] = useState([]);
-
-  useEffect(() => {
-    fetch('http://localhost:8081/animals')
-      .then(res => res.json())
-      .then(data => setData(data))
-      .catch(err => console.log(err));
-  }, []);
-
   return (
-    <>
-      <div className='animal-container-main'>
-        {
-          data.map((d, i) => (
-            <div className="animal-container" key={i}>
-              <div className="animal-name">
-                <p>{d.name}</p>
-              </div>
-              <div className="animal-image">
-                <img src={'/images/animals/' + d.image_path} alt={d.image_path} />
-              </div>
-              <div className="animal-sc-name">
-                <p>{d.scientific_name}</p>
-              </div>
-              <div className="animal-fact">
-                <p>"{d.fact}"</p>
-              </div>
-            </div>
-          ))
-        }
-      </div>
-      <p>hi</p>
-    </>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={[<Navbar/>,<Home/>]}></Route>
+      </Routes>
+    </BrowserRouter>
+  );
 
 }
 

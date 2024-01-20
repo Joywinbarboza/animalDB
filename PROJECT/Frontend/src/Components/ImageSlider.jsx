@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 
+
 // const slideStyles = {
 //   width: "100%",
 //   height: "100%",
@@ -97,10 +98,10 @@ const ImageSlider = ({ slides }) => {
 
 if (!slides || slides.length === 0) {
     // If slides is not available or empty, you can return a loading message or null
-    return <p>Loading...</p>; // Adjust this as needed
+    return <p className="text-5xl absolute top-1/2 right-1/2 left-1/2 bottom-1/2 font-bold">Loading...</p>; // Adjust this as needed
   }
 
-  return (
+  return ( 
     <>
       {/* <div style={sliderStyles}>
         <div>

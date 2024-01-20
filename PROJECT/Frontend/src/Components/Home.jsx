@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import ImageSlider from "./ImageSlider";
 
 function Home() {
   const [data, setData] = useState([]);
@@ -10,9 +11,24 @@ function Home() {
       .catch((err) => console.log(err));
   }, []);
 
+  // const slides = [];
+
+  // data.map((d,i)=>{
+  //   slides.push({
+  //     "url": `/image/animals/` + d.image_path,
+  //     "Title": d.image_path
+  //   })
+  // })
+
+  const slides = data.map((d, i) => ({
+    url: "/images/animals/" + d.image_path,
+    title: d.image_path, // Changed "Title" to "title" for consistency
+  }));
+  
+
   return (
     <>
-      <div className="animal-container-main">
+      {/* <div className="animal-container-main">
         {data.map((d, i) => (
           <div className="animal-container" key={i}>
             <div className="animal-name">
@@ -29,6 +45,9 @@ function Home() {
             </div>
           </div>
         ))}
+      </div> */}
+      <div>
+        <ImageSlider slides={data}/>
       </div>
     </>
   );

@@ -11,6 +11,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path='/' element={[<Navbar/>,<Home/>]}></Route>
+        <Route path='/visit' element={[<Navbar/>,<Home/>]}></Route>
       </Routes>
     </BrowserRouter>
   );

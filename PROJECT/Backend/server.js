@@ -12,7 +12,7 @@ const db = mysql.createConnection({
     host: "localhost",
     user: "root",
     password: '',
-    database: 'animaldb'
+    database: 'test'
 })
 
 
@@ -46,6 +46,14 @@ app.get('/image',(req,res)=>{
         return res.json(data);
     })
 })
+
+
+//signup and login
+app.use("/user",require('./routes/user'));    //user create
+
+
+//booking end point
+app.use("/book",require("./routes/booking"))
 
 //the port 8081 (i.e: localhost:8081) is made to listen
 app.listen(8081,()=>{

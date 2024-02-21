@@ -50,6 +50,7 @@ function Home() {
       <div>
         <ImageSlider slides={data}/>
       </div>
+      
     </>
   );
 }

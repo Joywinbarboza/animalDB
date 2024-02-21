@@ -1,5 +1,4 @@
 import React from 'react'
-import '../CSS/Book.css'
 import { useState } from 'react'
 import axios from "axios"
 

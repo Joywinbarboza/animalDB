@@ -6,12 +6,13 @@ const cors = require('cors');
 const app = express();
 app.use(cors());
 
+app.use(express.json())
 
 const db = mysql.createConnection({
     host: "localhost",
     user: "root",
     password: '',
-    database: 'test'
+    database: 'animaldb'
 })
 
 
@@ -46,7 +47,17 @@ app.get('/image',(req,res)=>{
     })
 })
 
+
+//signup and login
+app.use("/user",require('./routes/user'));    //user create
+
+
+//booking end point
+app.use("/book",require("./routes/booking"))
+
 //the port 8081 (i.e: localhost:8081) is made to listen
 app.listen(8081,()=>{
     console.log("listening");
 })
+
+// module.exports = app;

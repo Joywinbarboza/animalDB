@@ -1,0 +1,12 @@
+.container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+input{
+    background-color: rgb(166, 167, 192);
+    color: white;
+}

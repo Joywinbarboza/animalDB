@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import ImageSlider from "./ImageSlider";
+import ImageSlider from "../../Components/ImageSlider/ImageSlider.jsx";
+import "./Home.css";
 
 function Home() {
   const [data, setData] = useState([]);

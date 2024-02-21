@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
-import '../CSS/ImageSlider.css'
+import "./ImageSlider.css";
 
 const slideStyles = "w-full h-full rounded-[10px] bg-cover bg-center";
 

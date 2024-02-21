@@ -1,0 +1,1 @@
+#this is for the static stuff like navbar which dont change much 

@@ -8,6 +8,22 @@ import Home from './pages/home/Home.jsx';
 // import Navbar2 from './Components/Navbar2';
 
 function App() {
+
+  useEffect(() => {
+    const handleBeforeUnload = (event) => {
+      const message = 'Are you sure you want to leave?';
+      event.returnValue = message; // Standard for most browsers
+      return message; // For some older browsers
+    };
+
+    window.addEventListener('beforeunload', handleBeforeUnload);
+
+    return () => {
+      window.removeEventListener('beforeunload', handleBeforeUnload);
+    };
+  }, []);
+
+
   return (
     <BrowserRouter>
       <Routes>

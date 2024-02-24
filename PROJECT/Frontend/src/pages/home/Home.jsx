@@ -43,8 +43,6 @@ function Home() {
     <>
       <div>
         <ImageSlider slides={data}/>
-        <LoginButton/>
-        <LogoutButton/>
       </div>
       
     </>

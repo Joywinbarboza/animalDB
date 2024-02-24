@@ -1,28 +1,43 @@
 import React, { useEffect, useState } from "react";
 import "./Navbar.css";
 
+import { BrowserRouter, Route, Routes,useNavigate } from "react-router-dom"
+
+
 function Navbar2() {
 
     const [show_orange,setshow_orange] = useState("");
     const [show_blue,setshow_blue] = useState("hidden");
     const [show_green,setshow_green] = useState("hidden");
 
+    const navigate = useNavigate();
+
     function pressOrange(){
+        navigate("/");
         setshow_orange("");
         setshow_blue("hidden");
         setshow_green("hidden");
     }
 
     function pressBlue(){
+        navigate("/visit");
         setshow_orange("hidden");
         setshow_blue("");
         setshow_green("hidden");
     }
 
     function pressGreen(){
+        navigate("/");
         setshow_orange("hidden");
         setshow_blue("hidden");
         setshow_green("");
+    }
+
+    function handleLogin(){
+      navigate("/login");
+      setshow_orange("hidden");
+      setshow_blue("hidden");
+      setshow_green("hidden");
     }
 
   return (
@@ -37,7 +52,7 @@ function Navbar2() {
             GLOBAL CENTER FOR SPECIES SURVIVAL
           </div>
         </div>
-        <div className="login navbar-strips bg-white text-black rounded-t-xl">
+        <div className="login navbar-strips bg-white text-black rounded-t-xl" onClick={handleLogin}>
             LOGIN
         </div>
       </div>

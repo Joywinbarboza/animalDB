@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import ImageSlider from "../../Components/ImageSlider/ImageSlider.jsx";
 import "./Home.css";
+import Book from "../../Test/Book.jsx";
 
 function Home() {
   const [data, setData] = useState([]);
@@ -49,6 +50,7 @@ function Home() {
       </div> */}
       <div>
         <ImageSlider slides={data}/>
+        <Book/>
       </div>
     </>
   );

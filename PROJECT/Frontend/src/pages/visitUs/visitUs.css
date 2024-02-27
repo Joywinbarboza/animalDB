@@ -1,0 +1,77 @@
+/* visitUs.css */
+
+.bookTable {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #3498db; /* Blue border color */
+    border-radius: 8px;
+    background-color: #ecf0f1; /* Light blue background color */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-family: Bangers;
+  }
+  
+  .category {
+    margin-bottom: 20px;
+  }
+  
+  .adult,
+  .child {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .no-of-tickets {
+    display: flex;
+    align-items: center;
+  }
+  
+  .minus {
+    cursor: pointer;
+    padding: 5px 10px;
+    background-color: #e74c3c; /* Red color for "-" button */
+    color: white;
+    border: none;
+    border-radius: 20%; 
+    font-size: 16px;
+  }
+  
+  .plus {
+    cursor: pointer;
+    padding: 5px 10px;
+    background-color: #2ecc71; /* Green color for "+" button */
+    color: white;
+    border: none;
+    border-radius: 20%; 
+    font-size: 16px;
+  }
+  
+  .count {
+    margin: 0 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #3498db; /* Blue color for the count text */
+  }
+  
+  button {
+    background-color: #2980b9; /* Dark blue color for "Book Tickets" button */
+    color: white;
+    padding: 12px 24px; /* Slightly increase padding */
+    border: none;
+    border-radius: 8px; /* Make it more curved */
+    cursor: pointer;
+    font-size: 16px;
+    display: block;
+    margin: auto;
+    width: 100%;
+    box-sizing: border-box;
+    transition: background-color 0.3s; /* Smooth transition for background color */
+  }
+  
+  button:hover {
+    background-color: #1f618d; /* Darker blue color on hover */
+    color: white;
+
+  }
+  

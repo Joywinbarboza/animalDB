@@ -1,9 +1,28 @@
 /* visitUs.css */
 
+.visitus-main {
+  background-image: url(../../../public/images/visitusbackground/blue-zoo-297115254.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh; /* Set height to 100% of the viewport height */
+  width: 100%;
+}
+
+.visitus-holder{
+  margin: 0 10%;
+  background: #5DC3D7;
+}
+
+.back{
+  height: 174px;
+}
+
+
 .bookTable {
     max-width: 400px;
+    max-height: 100%;
     margin: auto;
-    padding: 20px;
     border: 1px solid #3498db; /* Blue border color */
     border-radius: 8px;
     background-color: #ecf0f1; /* Light blue background color */
@@ -20,7 +39,11 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: #F8F4E4; /* Set background color for adult and child boxes */
+    padding: 10px; /* Add padding for better spacing */
+    border-radius: 8px; /* Add border-radius for rounded corners */
   }
+  
   
   .no-of-tickets {
     display: flex;
@@ -75,3 +98,12 @@
 
   }
   
+
+  .visitus-holder.not-logged-in {
+    text-align: center;
+    padding: 20px;
+    background-color: #f8d7da; /* Light red background color for not logged in */
+    border: 1px solid #f5c6cb; /* Border color for not logged in */
+    border-radius: 5px; /* Border radius for not logged in */
+    color: #721c24; /* Text color for not logged in */
+  }

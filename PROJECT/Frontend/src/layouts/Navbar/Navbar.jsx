@@ -36,6 +36,19 @@ function Navbar2() {
       // User is logged in, perform logout
       localStorage.setItem("username", null);
       localStorage.setItem("email", null);
+
+      // Clear adult and child counts
+      // localStorage.setItem("adultCount.{}", "0");
+      // localStorage.setItem("childCount.{}", "0");
+
+      var id;
+
+      for(id=1;id<=3;id++){
+        console.log(id);
+        localStorage.setItem(`adultCount${id}`, "0");
+        localStorage.setItem(`childCount${id}`, "0");
+      }
+
       window.location.reload();
     } else {
       // User is not logged in, navigate to login page
@@ -72,7 +85,6 @@ function Navbar2() {
           onClick={handleLogin}
         >
           {localStorage.getItem("email") !== "null" && localStorage.getItem("email") !== "" ? "LOGOUT" : "LOGIN"}
-          {/* {localStorage.getItem("email")} */}
         </div>
       </div>
 

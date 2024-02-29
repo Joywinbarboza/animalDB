@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import "./ImageSlider.css";
+import gif1 from "../../../public/gif/paws.gif";
 
 const slideStyles = "w-full h-full rounded-[10px] bg-cover bg-center";
 
@@ -46,9 +47,12 @@ const ImageSlider = ({ slides }) => {
   if (!slides || slides.length === 0) {
     // If slides is not available or empty, you can return a loading message or null
     return (
-      <p className="text-5xl absolute top-1/2 right-1/2 left-1/2 bottom-1/2 font-bold">
-        Loading...
-      </p>
+      <>
+        <p className="text-5xl absolute top-1/2 right-1/2 left-1/2 bottom-1/2 font-bold">
+          Loading...
+        </p>
+        {/* <img src={gif1} alt="GIF 1" /> */}
+      </>
     ); // Adjust this as needed
   }
 

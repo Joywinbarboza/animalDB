@@ -5,13 +5,14 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 100vh; /* Set height to 100% of the viewport height */
+  height: 170vh; /* Set height to 100% of the viewport height */
   width: 100%;
 }
 
 .visitus-holder{
   margin: 0 10%;
-  background: #5DC3D7;
+  /* background: #5DC3D7; */
+  /* margin-top: 10px; */
 }
 
 .back{
@@ -28,6 +29,7 @@
     background-color: #ecf0f1; /* Light blue background color */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     font-family: Bangers;
+    margin-bottom: 20px;
   }
   
   .category {
@@ -106,4 +108,39 @@
     border: 1px solid #f5c6cb; /* Border color for not logged in */
     border-radius: 5px; /* Border radius for not logged in */
     color: #721c24; /* Text color for not logged in */
+  }
+
+
+  #pilikulazoo{
+    background-image: url(../../../public/images/zoo_main_photo/pilikulaent.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 500px;
+    border-radius: 20%;
+  }
+
+  #mysorezoo{
+    background-image: url(../../../public/images/zoo_main_photo/mysorezoo.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 500px;
+    border-radius: 20%;
+  }
+
+  #bannerghatta{
+    background-image: url(../../../public/images/zoo_main_photo/bannerghatta.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 500px;
+    border-radius: 20%;
+  }
+  
+  
+  .back{
+    /* margin-top: 20px; */
+    margin-bottom: 20px;
+    background: green;
   }

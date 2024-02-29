@@ -3,6 +3,7 @@ import "./visitUs.css";
 import axios from "axios";
 import ReactCardFlip from "react-card-flip";
 
+
 function VisitUs() {
   const [isLoggedIn, setIsLoggedIn] = useState(
     localStorage.getItem("email") !== "null" &&
@@ -15,18 +16,24 @@ function VisitUs() {
       adultCount: parseInt(localStorage.getItem("adultCount1")) || 0,
       childCount: parseInt(localStorage.getItem("childCount1")) || 0,
       isFlipped: false,
+      zoo: "Pilikula",
+      date: "",
     },
     {
       id: 2,
       adultCount: parseInt(localStorage.getItem("adultCount2")) || 0,
       childCount: parseInt(localStorage.getItem("childCount2")) || 0,
       isFlipped: false,
+      zoo: "Mysore Zoo",
+      date: "",
     },
     {
       id: 3,
       adultCount: parseInt(localStorage.getItem("adultCount3")) || 0,
       childCount: parseInt(localStorage.getItem("childCount3")) || 0,
       isFlipped: false,
+      zoo: "Bannerghatta Biological Park",
+      date: "",
     },
   ]);
 
@@ -74,7 +81,11 @@ function VisitUs() {
       email: email,
       adultCount: card.adultCount,
       childCount: card.childCount,
+      zoo: card.zoo,
+      date: card.date,
     };
+
+    console.log(card.date);
 
     const response = await axios
       .post("http://localhost:8081/visitbook", bookPost)
@@ -90,7 +101,9 @@ function VisitUs() {
   const flipCard = (id) => {
     setCards((prevCards) =>
       prevCards.map((card) =>
-        card.id === id ? { ...card, isFlipped: !card.isFlipped } : card
+        card.id === id
+          ? { ...card, isFlipped: !card.isFlipped }
+          : { ...card, isFlipped: false }
       )
     );
   };
@@ -105,7 +118,7 @@ function VisitUs() {
               flipDirection="horizontal"
               isFlipped={cards[0].isFlipped}
             >
-              <div className="back" onClick={() => flipCard(cards[0].id)}>
+              <div className="back" id="pilikulazoo" onClick={() => flipCard(cards[0].id)}>
                 <p>back</p>
                 <p>zoo1</p>
               </div>
@@ -155,6 +168,33 @@ function VisitUs() {
                       </div>
                     </div>
                   </div>
+                  <div className="category">
+                    <div className="date">
+                      <span>Date</span>
+                      <input
+                        type="date"
+                        onChange={(e) => {
+                          const selectedDate = new Date(e.target.value);
+                          const today = new Date();
+
+                          if (selectedDate > today) {
+                            setCards((prevCards) =>
+                              prevCards.map((card) =>
+                                card.id === cards[0].id
+                                  ? { ...card, date: e.target.value }
+                                  : card
+                              )
+                            );
+                          } else {
+                            alert(
+                              "INVALID DATE. Please give date for the FUTURE."
+                            );
+                          }
+                        }}
+                        value={cards[0].date}
+                      />
+                    </div>
+                  </div>
                 </form>
                 <button onClick={(e) => handleBook(e, cards[0].id)}>
                   Book Tickets
@@ -167,7 +207,7 @@ function VisitUs() {
               flipDirection="horizontal"
               isFlipped={cards[1].isFlipped}
             >
-              <div className="back" onClick={() => flipCard(cards[1].id)}>
+              <div className="back" id="mysorezoo" onClick={() => flipCard(cards[1].id)}>
                 <p>back</p>
                 <p>zoo2</p>
               </div>
@@ -217,6 +257,33 @@ function VisitUs() {
                       </div>
                     </div>
                   </div>
+                  <div className="category">
+                    <div className="date">
+                      <span>Date</span>
+                      <input
+                        type="date"
+                        onChange={(e) => {
+                          const selectedDate = new Date(e.target.value);
+                          const today = new Date();
+
+                          if (selectedDate > today) {
+                            setCards((prevCards) =>
+                              prevCards.map((card) =>
+                                card.id === cards[1].id
+                                  ? { ...card, date: e.target.value }
+                                  : card
+                              )
+                            );
+                          } else {
+                            alert(
+                              "INVALID DATE. Please give date for the FUTURE."
+                            );
+                          }
+                        }}
+                        value={cards[1].date}
+                      />
+                    </div>
+                  </div>
                 </form>
                 <button onClick={(e) => handleBook(e, cards[1].id)}>
                   Book Tickets
@@ -229,7 +296,7 @@ function VisitUs() {
               flipDirection="horizontal"
               isFlipped={cards[2].isFlipped}
             >
-              <div className="back" onClick={() => flipCard(cards[2].id)}>
+              <div className="back" id="bannerghatta" onClick={() => flipCard(cards[2].id)}>
                 <p>back</p>
                 <p>zoo3</p>
               </div>
@@ -277,6 +344,33 @@ function VisitUs() {
                           <p>+</p>
                         </div>
                       </div>
+                    </div>
+                  </div>
+                  <div className="category">
+                    <div className="date">
+                      <span>Date</span>
+                      <input
+                        type="date"
+                        onChange={(e) => {
+                          const selectedDate = new Date(e.target.value);
+                          const today = new Date();
+
+                          if (selectedDate > today) {
+                            setCards((prevCards) =>
+                              prevCards.map((card) =>
+                                card.id === cards[2].id
+                                  ? { ...card, date: e.target.value }
+                                  : card
+                              )
+                            );
+                          } else {
+                            alert(
+                              "INVALID DATE. Please give date for the FUTURE."
+                            );
+                          }
+                        }}
+                        value={cards[2].date}
+                      />
                     </div>
                   </div>
                 </form>

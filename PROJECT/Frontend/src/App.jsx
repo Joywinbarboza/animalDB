@@ -8,6 +8,7 @@ import Home from "./pages/home/Home.jsx";
 // import login from './pages/login/Login.jsx'
 import Login from "./pages/Login/Login.jsx";
 import SignUp from "./pages/SignUp/SignUp.jsx";
+import VisitUs from "./pages/visitUs/visitUs.jsx";
 // import Navbar2 from './Components/Navbar2';
 
 function App() {
@@ -29,7 +30,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={[<Navbar />, <Home />]}></Route>
-        <Route path="/visit" element={[<Navbar />, <Home />]}></Route>
+        <Route path="/visit" element={[<Navbar />, <VisitUs />]}></Route>
         <Route path="/login" element={[<Navbar />, <Login />]}></Route>
         <Route path="/signUp" element={[<Navbar />, <SignUp />]}></Route>
       </Routes>

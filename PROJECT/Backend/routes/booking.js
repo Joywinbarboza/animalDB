@@ -10,7 +10,7 @@ const db = mysql.createConnection({
 })
 
 router.post("/booknow",(req,res)=>{
-    const sql="INSERT INTO booking (`VisitorName`,`ContactNumber`,`Email`,`DateOfVisit`,`NumberOfTickets`,`TotalAmount`,`PaymentStatus`) VALUES (?)"
+    const sql="INSERT INTO Booking (`VisitorName`,`ContactNumber`,`Email`,`DateOfVisit`,`NumberOfTickets`,`TotalAmount`,`PaymentStatus`) VALUES (?)"
     const values=[
         req.body.VisitorName,
         req.body.ContactNumber,

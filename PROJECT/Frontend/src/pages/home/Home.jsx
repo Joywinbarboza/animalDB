@@ -1,7 +1,13 @@
 import React, { useEffect, useState } from "react";
 import ImageSlider from "../../Components/ImageSlider/ImageSlider.jsx";
 import "./Home.css";
-import Book from "../../Test/Book.jsx";
+// import Book from "../../Test/Book.jsx";
+
+import  LoginButton  from "../../Components/loginGoogle/loginGoogle.jsx"
+import  LogoutButton  from "../../Components/logoutGoogle/logoutGoogle.jsx"
+import { gapi } from 'gapi-script';
+
+const clientId = "271649088931-1b1j0bon6p21cikasf1cksrpt3b3t5df.apps.googleusercontent.com";
 
 function Home() {
   const [data, setData] = useState([]);
@@ -13,14 +19,20 @@ function Home() {
       .catch((err) => console.log(err));
   }, []);
 
-  // const slides = [];
+  // useEffect(()=>{
 
-  // data.map((d,i)=>{
-  //   slides.push({
-  //     "url": `/image/animals/` + d.image_path,
-  //     "Title": d.image_path
-  //   })
-  // })
+  //   function start(){
+  //     gapi.client.init({
+  //       clientId : clientId,
+  //       scope: ""
+  //     })
+
+  //   };
+
+  //   gapi.load('client:auth2',start);
+
+  // });
+
 
   const slides = data.map((d, i) => ({
     url: "/images/animals/" + d.image_path,
@@ -30,28 +42,10 @@ function Home() {
 
   return (
     <>
-      {/* <div className="animal-container-main">
-        {data.map((d, i) => (
-          <div className="animal-container" key={i}>
-            <div className="animal-name">
-              <p>{d.name}</p>
-            </div>
-            <div className="animal-image">
-              <img src={"/images/animals/" + d.image_path} alt={d.image_path} />
-            </div>
-            <div className="animal-sc-name">
-              <p>{d.scientific_name}</p>
-            </div>
-            <div className="animal-fact">
-              <p>"{d.fact}"</p>
-            </div>
-          </div>
-        ))}
-      </div> */}
       <div>
         <ImageSlider slides={data}/>
-        <Book/>
       </div>
+      
     </>
   );
 }

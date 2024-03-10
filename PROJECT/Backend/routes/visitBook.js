@@ -10,7 +10,7 @@ const db = mysql.createConnection({
 });
 
 router.post("/visitbook", (req, res) => {
-  // const sql="INSERT INTO Booking (`VisitorName`,`ContactNumber`,`Email`,`DateOfVisit`,`NumberOfTickets`,`TotalAmount`,`PaymentStatus`) VALUES (?)"
+  // const sql="INSERT INTO Booking (VisitorName,ContactNumber,Email,DateOfVisit,NumberOfTickets,TotalAmount,PaymentStatus) VALUES (?)"
   const sql =
     "INSERT INTO bookingzoo1 (user_email,zoo_name,booking_date ,num_adult_tickets, num_child_tickets, total_price) VALUES (?, ?, ?, ?, ?, ?)";
 
@@ -31,5 +31,23 @@ router.post("/visitbook", (req, res) => {
     return res.json(data);
   });
 });
+
+
+//changed here your booking
+router.get("/getPlan",(req,res)=>{
+  const sql="SELECT * FROM bookingzoo1 WHERE user_email = ?"
+  
+  console.log(req.body.email)
+  const values=[req.query.email]
+
+  db.query(sql,values,(err,data)=>{
+    //if there is an error return a json with the error in it
+    if(err) return res.json(err);
+    
+    //else just return the result json with the data
+    return res.json(data);
+})
+})
+
 
 module.exports = router;

@@ -43,7 +43,7 @@ function Navbar2() {
 
       var id;
 
-      for(id=1;id<=3;id++){
+      for (id = 1; id <= 3; id++) {
         console.log(id);
         localStorage.setItem(`adultCount${id}`, "0");
         localStorage.setItem(`childCount${id}`, "0");
@@ -59,6 +59,22 @@ function Navbar2() {
     setshow_blue("hidden");
     setshow_green("hidden");
   }
+
+  const [plan, setPlan] = useState([]);
+
+  const hadlePlan = () => {
+    navigate("/yb");
+    // const email = localStorage.getItem("email");
+    //   const response = await axios
+    //     .get("http://localhost:8081/visit/getPlan", email)
+    //     .then((res) => {
+    //       console.log("done");
+    //     });
+
+    //   const json = await response.json();
+    //   console.log(json);
+    //   setPlan(json);
+  };
 
   return (
     <>
@@ -84,19 +100,29 @@ function Navbar2() {
           className="login navbar-strips bg-white text-black rounded-t-xl"
           onClick={handleLogin}
         >
-          {localStorage.getItem("email") !== "null" && localStorage.getItem("email") !== "" ? "LOGOUT" : "LOGIN"}
+          {localStorage.getItem("email") !== "null" &&
+          localStorage.getItem("email") !== ""
+            ? "LOGOUT"
+            : "LOGIN"}
         </div>
       </div>
 
-      <div className={`bg-navbar-orange p-3 ${show_orange} orange-select-options-container1`}>
+      <div
+        className={`bg-navbar-orange p-3 ${show_orange} orange-select-options-container1`}
+      >
         <div className="orange-select-options-container2 pr-[10%]">
           <span>Mammals</span>
           <span>Reptiles</span>
           <span>Birds</span>
         </div>
       </div>
-      <div className={`bg-navbar-blue p-3 ${show_blue}`}>yo</div>
-      <div className={`bg-navbar-green p-3 ${show_green}`}>yo</div>
+      <div className={`bg-navbar-blue p-3 ${show_blue}`}>
+        {/* //changed here api call plan view */}
+        <div className="orange-select-options-container2 pr-[10%]">
+          <span onClick={hadlePlan}>Your Booking</span>
+        </div>
+      </div>
+      <div className={`bg-navbar-green p-3 ${show_green}`}>Adopt</div>
     </>
   );
 }

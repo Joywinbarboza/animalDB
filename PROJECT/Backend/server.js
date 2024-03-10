@@ -23,7 +23,7 @@ app.get('/',(req,res)=>{
 
 app.get('/animals',(req,res)=>{
     //setting sql variable with this query 
-    const sql = "SELECT * FROM `animals_test`";
+    const sql = "SELECT * FROM animals_test";
 
     db.query(sql,(err,data)=>{
         //if there is an error return a json with the error in it
@@ -36,7 +36,7 @@ app.get('/animals',(req,res)=>{
 
 app.get('/image',(req,res)=>{
     //setting sql variable with this query 
-    const sql = "SELECT * FROM `image_test`";
+    const sql = "SELECT * FROM image_test";
 
     db.query(sql,(err,data)=>{
         //if there is an error return a json with the error in it
@@ -54,7 +54,7 @@ app.use("/user",require('./routes/user'));    //user create
 
 //booking end point
 // app.use("/book",require("./routes/booking"));
-app.use("/",require("./routes/visitBook"));
+app.use("/visit",require("./routes/visitBook"));
 
 //the port 8081 (i.e: localhost:8081) is made to listen
 app.listen(8081,()=>{

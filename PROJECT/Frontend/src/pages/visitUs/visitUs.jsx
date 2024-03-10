@@ -88,7 +88,7 @@ function VisitUs() {
     console.log(card.date);
 
     const response = await axios
-      .post("http://localhost:8081/visitbook", bookPost)
+      .post("http://localhost:8081/visit/visitbook", bookPost)
       .then((res) => {
         console.log("done");
       });

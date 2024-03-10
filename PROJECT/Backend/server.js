@@ -54,7 +54,7 @@ app.use("/user",require('./routes/user'));    //user create
 
 //booking end point
 // app.use("/book",require("./routes/booking"));
-app.use("/",require("./routes/visitBook"));
+app.use("/visit",require("./routes/visitBook"));
 
 //the port 8081 (i.e: localhost:8081) is made to listen
 app.listen(8081,()=>{

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Navbar.css";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 function Navbar2() {
   const [show_orange, setshow_orange] = useState("");
@@ -60,6 +61,24 @@ function Navbar2() {
     setshow_green("hidden");
   }
 
+
+  //changed here
+  const [plan, setPlan] = useState([])
+
+  const hadlePlan=()=>{
+    navigate("/yb");
+  // const email = localStorage.getItem("email");
+  //   const response = await axios
+  //     .get("http://localhost:8081/visit/getPlan", email)
+  //     .then((res) => {
+  //       console.log("done");
+  //     });
+
+  //   const json = await response.json();
+  //   console.log(json);
+  //   setPlan(json);
+  }
+
   return (
     <>
       <div className="flex bg-navbar-brown justify-between">
@@ -95,7 +114,12 @@ function Navbar2() {
           <span>Birds</span>
         </div>
       </div>
-      <div className={`bg-navbar-blue p-3 ${show_blue}`}>yo</div>
+      <div className={`bg-navbar-blue p-3 ${show_blue}`}>
+        {/* //changed here api call plan view */}
+        <div className="orange-select-options-container2 pr-[10%]">
+          <span onClick={hadlePlan}>Your Booking</span>
+        </div>
+      </div>
       <div className={`bg-navbar-green p-3 ${show_green}`}>yo</div>
     </>
   );

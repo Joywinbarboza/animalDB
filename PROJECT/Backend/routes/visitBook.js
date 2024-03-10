@@ -6,7 +6,7 @@ const db = mysql.createConnection({
   host: "localhost",
   user: "root",
   password: "",
-  database: "test",
+  database: "animaldb",
 });
 
 router.post("/visitbook", (req, res) => {
@@ -31,5 +31,22 @@ router.post("/visitbook", (req, res) => {
     return res.json(data);
   });
 });
+
+
+router.get("/getPlan",(req,res)=>{
+  const sql="SELECT * FROM `bookingzoo1` WHERE user_email = ?"
+
+  const values=[req.body.email]
+
+  db.query(sql,req.body.email,(err,data)=>{
+    //if there is an error return a json with the error in it
+    if(err) return res.json(err);
+    
+    //else just return the result json with the data
+    return res.json(data);
+})
+})
+
+//changed here your booking
 
 module.exports = router;

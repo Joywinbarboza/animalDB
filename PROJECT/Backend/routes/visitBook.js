@@ -50,27 +50,41 @@ router.get("/getPlan",(req,res)=>{
 })
 
 
-// router.put("/update/:id", (req, res) => {
-//   const { id } = req.body;
+router.put("/updatevisitbook/:bookingId", (req, res) => {
+  const bookingId = req.params.bookingId;
 
-//   if (!id) {
-//     return res.status(400).json({ error: 'Missing required parameters' });
-//   }
+  const sql = `
+    UPDATE bookingzoo1
+    SET
+      user_email = ?,
+      zoo_name = ?,
+      booking_date = ?,
+      num_adult_tickets = ?,
+      num_child_tickets = ?,
+      total_price = ?
+    WHERE booking_id = ?
+  `;
 
-//   const updateQuery = 'UPDATE bookingzoo1 SET user_email=?, zoo_name=?, booking_date=?, num_adult_tickets=?, num_child_tickets=?, total_price=? WHERE id=?';
+  const total = req.body.adultCount * 50 + req.body.childCount * 30;
+  const values = [
+    req.body.email,
+    req.body.zoo,
+    req.body.date,
+    req.body.adultCount,
+    req.body.childCount,
+    total,
+    bookingId
+  ];
 
-//   const total = req.body.adultCount * 50 + req.body.childCount * 30;
-//   const values = [req.body.email, req.body.zoo, req.body.date, req.body.adultCount, req.body.childCount, total, id];
+  db.query(sql, values, (err, data) => {
+    if (err) {
+      res.send(err);
+    }
+    return res.json(data);
+  });
+});
 
-//   pool.query(updateQuery, values, (error, results) => {
-//     if (error) {
-//       console.error('Error updating data:', error);
-//       return res.status(500).json({ error: 'Internal Server Error' });
-//     }
 
-//     res.json({ message: 'Data updated successfully' });
-//   });
-// });
 
 
 

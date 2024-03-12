@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Navbar.css";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 function Navbar2() {
   const [show_orange, setshow_orange] = useState("");

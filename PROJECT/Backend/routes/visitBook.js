@@ -6,7 +6,7 @@ const db = mysql.createConnection({
   host: "localhost",
   user: "root",
   password: "",
-  database: "test",
+  database: "animaldb",
 });
 
 router.post("/visitbook", (req, res) => {
@@ -48,6 +48,44 @@ router.get("/getPlan",(req,res)=>{
     return res.json(data);
 })
 })
+
+
+router.put("/updatevisitbook/:bookingId", (req, res) => {
+  const bookingId = req.params.bookingId;
+
+  const sql = `
+    UPDATE bookingzoo1
+    SET
+      user_email = ?,
+      zoo_name = ?,
+      booking_date = ?,
+      num_adult_tickets = ?,
+      num_child_tickets = ?,
+      total_price = ?
+    WHERE booking_id = ?
+  `;
+
+  const total = req.body.adultCount * 50 + req.body.childCount * 30;
+  const values = [
+    req.body.email,
+    req.body.zoo,
+    req.body.date,
+    req.body.adultCount,
+    req.body.childCount,
+    total,
+    bookingId
+  ];
+
+  db.query(sql, values, (err, data) => {
+    if (err) {
+      res.send(err);
+    }
+    return res.json(data);
+  });
+});
+
+
+
 
 
 module.exports = router;

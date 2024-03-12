@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import ImageSlider from "../../Components/ImageSlider/ImageSlider.jsx";
 import "./Home.css";
+// import Book from "../../Test/Book.jsx";
 
 import LoginButton from "../../Components/loginGoogle/loginGoogle.jsx";
 import LogoutButton from "../../Components/logoutGoogle/logoutGoogle.jsx";
@@ -20,6 +21,7 @@ function Home() {
       .then((res) => res.json())
       .then((data) => setData(data))
       .catch((err) => console.log(err));
+
 
     fetch("http://localhost:8081/animal_mammals")
       .then((res) => res.json())
@@ -47,6 +49,7 @@ function Home() {
 
     gapi.load("client:auth2", start);
   });
+
 
   // const slides = data.map((d, i) => ({
   //   url: "/images/animals/" + d.image_path,

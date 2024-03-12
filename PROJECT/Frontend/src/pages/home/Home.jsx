@@ -2,49 +2,70 @@ import React, { useEffect, useState } from "react";
 import ImageSlider from "../../Components/ImageSlider/ImageSlider.jsx";
 import "./Home.css";
 
-import  LoginButton  from "../../Components/loginGoogle/loginGoogle.jsx"
-import  LogoutButton  from "../../Components/logoutGoogle/logoutGoogle.jsx"
-import { gapi } from 'gapi-script';
+import LoginButton from "../../Components/loginGoogle/loginGoogle.jsx";
+import LogoutButton from "../../Components/logoutGoogle/logoutGoogle.jsx";
+import { gapi } from "gapi-script";
 
-const clientId = "271649088931-1b1j0bon6p21cikasf1cksrpt3b3t5df.apps.googleusercontent.com";
+const clientId =
+  "271649088931-1b1j0bon6p21cikasf1cksrpt3b3t5df.apps.googleusercontent.com";
 
 function Home() {
   const [data, setData] = useState([]);
+  const [animal_mammals, setAnimalMammals] = useState([]);
+  const [animal_reptiles, setAnimalreptiles] = useState([]);
+  const [animal_birds, setAnimalbirds] = useState([]);
 
   useEffect(() => {
     fetch("http://localhost:8081/animals")
       .then((res) => res.json())
       .then((data) => setData(data))
       .catch((err) => console.log(err));
+
+    fetch("http://localhost:8081/animal_mammals")
+      .then((res) => res.json())
+      .then((data) => setAnimalMammals(data))
+      .catch((err) => console.log(err));
+
+    fetch("http://localhost:8081/animal_reptiles")
+      .then((res) => res.json())
+      .then((data) => setAnimalreptiles(data))
+      .catch((err) => console.log(err));
+
+      fetch("http://localhost:8081/animal_birds")
+      .then((res) => res.json())
+      .then((data) => setAnimalbirds(data))
+      .catch((err) => console.log(err));
   }, []);
 
-  useEffect(()=>{
-
-    function start(){
+  useEffect(() => {
+    function start() {
       gapi.client.init({
-        clientId : clientId,
-        scope: ""
-      })
+        clientId: clientId,
+        scope: "",
+      });
+    }
 
-    };
-
-    gapi.load('client:auth2',start);
-
+    gapi.load("client:auth2", start);
   });
 
+  // const slides = data.map((d, i) => ({
+  //   url: "/images/animals/" + d.image_path,
+  //   title: d.image_path, // Changed "Title" to "title" for consistency
+  // }));
 
-  const slides = data.map((d, i) => ({
-    url: "/images/animals/" + d.image_path,
-    title: d.image_path, // Changed "Title" to "title" for consistency
-  }));
-  
+  // const slides2 = animal_mammals.map((d, i) => ({
+  //   url: "/" + d.image_path,
+  //   title: d.image_path, // Changed "Title" to "title" for consistency
+  // }));
 
   return (
     <>
       <div>
-        <ImageSlider slides={data}/>
+        {/* <ImageSlider slides={data} /> */}
+        <ImageSlider slides={animal_mammals} />
+        <ImageSlider slides={animal_reptiles} />
+        <ImageSlider slides={animal_birds} />
       </div>
-      
     </>
   );
 }

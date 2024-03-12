@@ -1,6 +1,7 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Caprasimo&display=swap'); */
 @import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lemon&family=Yanone+Kaffeesatz&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -27,7 +28,8 @@
 }
 
 .orange-select-options-container1{
-    font-family: 'Lemon';
+    /* font-family: 'Lemon'; */
+    font-family: Lexend;
 }
 
 

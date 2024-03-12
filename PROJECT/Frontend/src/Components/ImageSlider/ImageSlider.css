@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
 p{
     font-family: Bangers;
+    /* font-family: Pacifico; */
 }

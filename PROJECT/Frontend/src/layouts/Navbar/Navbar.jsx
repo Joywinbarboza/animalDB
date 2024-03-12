@@ -61,25 +61,6 @@ function Navbar2() {
     setshow_green("hidden");
   }
 
-<<<<<<< HEAD
-
-  //changed here
-  const [plan, setPlan] = useState([])
-
-  const hadlePlan=()=>{
-    navigate("/yb");
-  // const email = localStorage.getItem("email");
-  //   const response = await axios
-  //     .get("http://localhost:8081/visit/getPlan", email)
-  //     .then((res) => {
-  //       console.log("done");
-  //     });
-
-  //   const json = await response.json();
-  //   console.log(json);
-  //   setPlan(json);
-  }
-=======
   const [plan, setPlan] = useState([]);
 
   const hadlePlan = () => {
@@ -95,7 +76,6 @@ function Navbar2() {
     //   console.log(json);
     //   setPlan(json);
   };
->>>>>>> cac837a39a3fcc86808cddc0650b19b397bed351
 
   return (
     <>
@@ -143,11 +123,7 @@ function Navbar2() {
           <span onClick={hadlePlan}>Your Booking</span>
         </div>
       </div>
-<<<<<<< HEAD
-      <div className={`bg-navbar-green p-3 ${show_green}`}>yo</div>
-=======
       <div className={`bg-navbar-green p-3 ${show_green}`}>Adopt</div>
->>>>>>> cac837a39a3fcc86808cddc0650b19b397bed351
     </>
   );
 }

@@ -33,14 +33,6 @@ router.post("/visitbook", (req, res) => {
 });
 
 
-<<<<<<< HEAD
-router.get("/getPlan",(req,res)=>{
-  const sql="SELECT * FROM `bookingzoo1` WHERE user_email = ?"
-
-  const values=[req.body.email]
-
-  db.query(sql,req.body.email,(err,data)=>{
-=======
 //changed here your booking
 router.get("/getPlan",(req,res)=>{
   const sql="SELECT * FROM bookingzoo1 WHERE user_email = ?"
@@ -49,7 +41,6 @@ router.get("/getPlan",(req,res)=>{
   const values=[req.query.email]
 
   db.query(sql,values,(err,data)=>{
->>>>>>> cac837a39a3fcc86808cddc0650b19b397bed351
     //if there is an error return a json with the error in it
     if(err) return res.json(err);
     
@@ -58,11 +49,29 @@ router.get("/getPlan",(req,res)=>{
 })
 })
 
-<<<<<<< HEAD
-//changed here your booking
+
+// router.put("/update/:id", (req, res) => {
+//   const { id } = req.body;
+
+//   if (!id) {
+//     return res.status(400).json({ error: 'Missing required parameters' });
+//   }
+
+//   const updateQuery = 'UPDATE bookingzoo1 SET user_email=?, zoo_name=?, booking_date=?, num_adult_tickets=?, num_child_tickets=?, total_price=? WHERE id=?';
+
+//   const total = req.body.adultCount * 50 + req.body.childCount * 30;
+//   const values = [req.body.email, req.body.zoo, req.body.date, req.body.adultCount, req.body.childCount, total, id];
+
+//   pool.query(updateQuery, values, (error, results) => {
+//     if (error) {
+//       console.error('Error updating data:', error);
+//       return res.status(500).json({ error: 'Internal Server Error' });
+//     }
+
+//     res.json({ message: 'Data updated successfully' });
+//   });
+// });
+
+
 
 module.exports = router;
-=======
-
-module.exports = router;
->>>>>>> cac837a39a3fcc86808cddc0650b19b397bed351

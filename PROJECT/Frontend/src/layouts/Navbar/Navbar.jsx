@@ -9,6 +9,12 @@ function Navbar2() {
   const [show_green, setshow_green] = useState("hidden");
   const navigate = useNavigate();
 
+  useEffect(() => {
+    setshow_orange("");
+    setshow_blue("hidden");
+    setshow_green("hidden");
+  },[]);
+
   function pressOrange() {
     navigate("/");
     setshow_orange("");

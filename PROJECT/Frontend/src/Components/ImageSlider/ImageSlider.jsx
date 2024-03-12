@@ -41,7 +41,7 @@ const ImageSlider = ({ slides }) => {
   // useEffect(() => {
   //   setTimeout(() => {
   //     goToNext(currentIndex);
-  //   }, 10000);
+  //   }, 5000);
   // });
 
   if (!slides || slides.length === 0) {
@@ -65,9 +65,10 @@ const ImageSlider = ({ slides }) => {
           </div>
           <div className={slideStylesWidthBackground + " flex "}>
             <img
-              src={"/images/animals/" + slides[currentIndex].image_path}
+              // src={"/images/animals/" + slides[currentIndex].image_path}
+              src={"" + slides[currentIndex].image_path}
               alt=""
-              className="ml-[10%] mt-1 h-[700px] w-[500px] bg-cover duration-500 translate-x-1 "
+              className="ml-[10%] mt-1 h-[700px] w-[600px] bg-cover duration-500 translate-x-1 "
             />
             <div className="flex-column ml-[10%] mt-[10%]">
               <p className="text-[50px]">{slides[currentIndex].name}</p>

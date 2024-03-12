@@ -32,13 +32,14 @@ function SignUp() {
       const response = await axios.post(
         "http://localhost:8081/user/signup",
         signUp
-      );
-    } catch (err) {
-      console.log(err);
-      navigate("/");
+        );
+        console.log(response.data);
+        if(response.data.warningCount == 0)
+          navigate("/");
+      } catch (err) {
+        console.log(err);
     }
 
-    console.log(response.data);
   }
 
   return (

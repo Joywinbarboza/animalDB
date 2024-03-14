@@ -130,6 +130,7 @@ const YourBook = () => {
               Update
             </button>
             <button
+              className="delete"
               onClick={(e) => {
                 Delete(e, booking.booking_id);
               }}
@@ -139,9 +140,9 @@ const YourBook = () => {
           </div>
         ))}
       </div>
-      <div ref={formref} style={{ display: "none" }}>
+      <div ref={formref} style={{ display: "none" }} className="form-container">
         <form>
-          Zoo:
+          <p>Zoo:</p>
           <input
             type="text"
             placeholder="name"
@@ -150,7 +151,7 @@ const YourBook = () => {
             onChange={onChange}
           />
           <br />
-          Date:
+          <p>Date:</p>
           <input
             type="date"
             placeholder="date"
@@ -159,7 +160,7 @@ const YourBook = () => {
             onChange={onChange}
           />
           <br />
-          Adult Count:{" "}
+          <p>Adult Count:</p>{" "}
           <input
             type="number"
             name="adult"
@@ -167,7 +168,7 @@ const YourBook = () => {
             onChange={onChange}
           />
           <br />
-          Child Count:{" "}
+          <p>Child Count:</p>{" "}
           <input
             type="number"
             name="child"

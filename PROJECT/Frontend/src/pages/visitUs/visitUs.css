@@ -1,146 +1,138 @@
-/* visitUs.css */
-
 .visitus-main {
   background-image: url(../../../public/images/visitusbackground/blue-zoo-297115254.png);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 170vh; /* Set height to 100% of the viewport height */
+  /* height: 173vh; Set height to 100% of the viewport height */
   width: 100%;
+  margin: 0; /* Remove any default margin */
+  padding: 0; /* Remove any default padding */
 }
 
-.visitus-holder{
+.visitus-holder {
   margin: 0 10%;
-  /* background: #5DC3D7; */
-  /* margin-top: 10px; */
+  overflow: hidden; /* Ensure overflow is hidden to prevent unwanted white space */
 }
 
-.back{
-  height: 174px;
+.back {
+  background-size: cover; /* Ensure the background image covers the entire area */
+  height: 100%; /* Set the height to 100% to fill the container */
+  border-radius: 20%; /* Optional: Add border radius */
+  /* margin: 0; Remove any default margin */
+  padding: 0; /* Remove any default padding */
+  margin-bottom: 20px;
 }
-
 
 .bookTable {
-    max-width: 400px;
-    max-height: 100%;
-    margin: auto;
-    border: 1px solid #3498db; /* Blue border color */
-    border-radius: 8px;
-    background-color: #ecf0f1; /* Light blue background color */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    font-family: Bangers;
-    margin-bottom: 20px;
-  }
-  
-  .category {
-    margin-bottom: 20px;
-  }
-  
-  .adult,
-  .child {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #F8F4E4; /* Set background color for adult and child boxes */
-    padding: 10px; /* Add padding for better spacing */
-    border-radius: 8px; /* Add border-radius for rounded corners */
-  }
-  
-  
-  .no-of-tickets {
-    display: flex;
-    align-items: center;
-  }
-  
-  .minus {
-    cursor: pointer;
-    padding: 5px 10px;
-    background-color: #e74c3c; /* Red color for "-" button */
-    color: white;
-    border: none;
-    border-radius: 20%; 
-    font-size: 16px;
-  }
-  
-  .plus {
-    cursor: pointer;
-    padding: 5px 10px;
-    background-color: #2ecc71; /* Green color for "+" button */
-    color: white;
-    border: none;
-    border-radius: 20%; 
-    font-size: 16px;
-  }
-  
-  .count {
-    margin: 0 10px;
-    font-size: 18px;
-    font-weight: bold;
-    color: #3498db; /* Blue color for the count text */
-  }
-  
-  button {
-    background-color: #2980b9; /* Dark blue color for "Book Tickets" button */
-    color: white;
-    padding: 12px 24px; /* Slightly increase padding */
-    border: none;
-    border-radius: 8px; /* Make it more curved */
-    cursor: pointer;
-    font-size: 16px;
-    display: block;
-    margin: auto;
-    width: 100%;
-    box-sizing: border-box;
-    transition: background-color 0.3s; /* Smooth transition for background color */
-  }
-  
-  button:hover {
-    background-color: #1f618d; /* Darker blue color on hover */
-    color: white;
+  max-width: 400px;
+  max-height: 100%;
+  margin: auto;
+  border: 1px solid #3498db; /* Blue border color */
+  border-radius: 8px;
+  background-color: #ecf0f1; /* Light blue background color */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  font-family: Bangers;
+  margin-bottom: 20px;
+}
 
-  }
-  
+.category {
+  margin-bottom: 20px;
+}
 
-  .visitus-holder.not-logged-in {
-    text-align: center;
-    padding: 20px;
-    background-color: #f8d7da; /* Light red background color for not logged in */
-    border: 1px solid #f5c6cb; /* Border color for not logged in */
-    border-radius: 5px; /* Border radius for not logged in */
-    color: #721c24; /* Text color for not logged in */
-  }
+.adult,
+.child {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f8f4e4; /* Set background color for adult and child boxes */
+  padding: 10px; /* Add padding for better spacing */
+  border-radius: 8px; /* Add border-radius for rounded corners */
+}
 
+.no-of-tickets {
+  display: flex;
+  align-items: center;
+}
 
-  #pilikulazoo{
-    background-image: url(../../../public/images/zoo_main_photo/pilikulaent.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 500px;
-    border-radius: 20%;
-  }
+.minus {
+  cursor: pointer;
+  padding: 5px 10px;
+  background-color: #e74c3c; /* Red color for "-" button */
+  color: white;
+  border: none;
+  border-radius: 20%;
+  font-size: 16px;
+}
 
-  #mysorezoo{
-    background-image: url(../../../public/images/zoo_main_photo/mysorezoo.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 500px;
-    border-radius: 20%;
-  }
+.plus {
+  cursor: pointer;
+  padding: 5px 10px;
+  background-color: #2ecc71; /* Green color for "+" button */
+  color: white;
+  border: none;
+  border-radius: 20%;
+  font-size: 16px;
+}
 
-  #bannerghatta{
-    background-image: url(../../../public/images/zoo_main_photo/bannerghatta.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 500px;
-    border-radius: 20%;
-  }
-  
-  
-  .back{
-    /* margin-top: 20px; */
-    margin-bottom: 20px;
-    background: green;
-  }
+.count {
+  margin: 0 10px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #3498db; /* Blue color for the count text */
+}
+
+button {
+  background-color: #2980b9; /* Dark blue color for "Book Tickets" button */
+  color: white;
+  padding: 12px 24px; /* Slightly increase padding */
+  border: none;
+  border-radius: 8px; /* Make it more curved */
+  cursor: pointer;
+  font-size: 16px;
+  display: block;
+  margin: auto;
+  width: 100%;
+  box-sizing: border-box;
+  transition: background-color 0.3s; /* Smooth transition for background color */
+}
+
+button:hover {
+  background-color: #1f618d; /* Darker blue color on hover */
+  color: white;
+}
+
+.visitus-holder.not-logged-in {
+  text-align: center;
+  padding: 20px;
+  background-color: #f8d7da; /* Light red background color for not logged in */
+  border: 1px solid #f5c6cb; /* Border color for not logged in */
+  border-radius: 5px; /* Border radius for not logged in */
+  color: #721c24; /* Text color for not logged in */
+}
+
+#pilikulazoo{
+  background-image: url(../../../public/images/zoo_main_photo/pilikulaent.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 500px;
+  border-radius: 20%;
+}
+
+#mysorezoo{
+  background-image: url(../../../public/images/zoo_main_photo/mysorezoo.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 500px;
+  border-radius: 20%;
+}
+
+#bannerghatta{
+  background-image: url(../../../public/images/zoo_main_photo/bannerghatta.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 500px;
+  border-radius: 20%;
+}

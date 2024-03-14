@@ -3,12 +3,13 @@ import "./visitUs.css";
 import axios from "axios";
 import ReactCardFlip from "react-card-flip";
 
-
 function VisitUs() {
   const [isLoggedIn, setIsLoggedIn] = useState(
     localStorage.getItem("email") !== "null" &&
       localStorage.getItem("email") !== ""
   );
+
+  const [visitusHeight, setVisitusHeight] = useState("211vh");
 
   const [cards, setCards] = useState([
     {
@@ -99,6 +100,7 @@ function VisitUs() {
   }
 
   const flipCard = (id) => {
+    setVisitusHeight("185vh");
     setCards((prevCards) =>
       prevCards.map((card) =>
         card.id === id
@@ -111,14 +113,18 @@ function VisitUs() {
   if (isLoggedIn) {
     return (
       <>
-        <div className="visitus-main">
+        <div className="visitus-main" style={{ height: visitusHeight }}>
           <div className="visitus-holder">
             {/* Card 1 */}
             <ReactCardFlip
               flipDirection="horizontal"
               isFlipped={cards[0].isFlipped}
             >
-              <div className="back" id="pilikulazoo" onClick={() => flipCard(cards[0].id)}>
+              <div
+                className="back"
+                id="pilikulazoo"
+                onClick={() => flipCard(cards[0].id)}
+              >
                 {/* <p>back</p>
                 <p>zoo1</p> */}
               </div>
@@ -207,7 +213,11 @@ function VisitUs() {
               flipDirection="horizontal"
               isFlipped={cards[1].isFlipped}
             >
-              <div className="back" id="mysorezoo" onClick={() => flipCard(cards[1].id)}>
+              <div
+                className="back"
+                id="mysorezoo"
+                onClick={() => flipCard(cards[1].id)}
+              >
                 {/* <p>back</p>
                 <p>zoo2</p> */}
               </div>
@@ -296,7 +306,11 @@ function VisitUs() {
               flipDirection="horizontal"
               isFlipped={cards[2].isFlipped}
             >
-              <div className="back" id="bannerghatta" onClick={() => flipCard(cards[2].id)}>
+              <div
+                className="back"
+                id="bannerghatta"
+                onClick={() => flipCard(cards[2].id)}
+              >
                 {/* <p>back</p>
                 <p>zoo3</p> */}
               </div>
@@ -386,7 +400,7 @@ function VisitUs() {
   } else {
     // User is not logged in
     return (
-      <div className="visitus-main">
+      <div className="visitus-main-return">
         <div className="visitus-holder not-logged-in">
           <p>You need to log in to book tickets.</p>
           {/* Add login button or link here */}

@@ -1,0 +1,128 @@
+/* donate.css */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+
+.donate-container {
+    text-align: center;
+    padding: 20px;
+}
+
+.donate-container > p,.donate-container > h1 {
+    font-family: "Dancing Script" !important;
+    font-weight: bold;
+    font-size: 35px;
+}
+
+.image-container {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.animal-image {
+    width: 30%; /* Adjust size as needed */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.donate-button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.donate-button:hover {
+    background-color: #45a049;
+}
+
+.feedback-form {
+    margin-top: 40px;
+}
+
+.feedback-form h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.feedback-form input,
+.feedback-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.feedback-form textarea {
+    height: 150px;
+}
+
+.feedback-form button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.feedback-form button:hover {
+    background-color: #45a049;
+}
+
+.amount-container {
+    margin-top: 40px;
+}
+
+.amount-container h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.amount-container div {
+    margin-bottom: 10px;
+}
+
+.amount-container input[type="radio"] {
+    display: none;
+}
+
+.amount-container label {
+    display: inline-block;
+    cursor: pointer;
+    padding: 10px 20px;
+    background-color: #f2f2f2;
+    border-radius: 4px;
+}
+
+.amount-container input[type="radio"]:checked + label {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.amount-container input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+
+.donate-container{
+    background: url("../../../public/images/animals/background1.jpg");
+    background-size: cover;
+}
+
+.animal-image{
+    padding: 0px;
+}

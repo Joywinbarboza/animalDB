@@ -119,8 +119,8 @@ function VisitUs() {
               isFlipped={cards[0].isFlipped}
             >
               <div className="back" id="pilikulazoo" onClick={() => flipCard(cards[0].id)}>
-                <p>back</p>
-                <p>zoo1</p>
+                {/* <p>back</p>
+                <p>zoo1</p> */}
               </div>
               <div className="bookTable">
                 <form action="">
@@ -208,8 +208,8 @@ function VisitUs() {
               isFlipped={cards[1].isFlipped}
             >
               <div className="back" id="mysorezoo" onClick={() => flipCard(cards[1].id)}>
-                <p>back</p>
-                <p>zoo2</p>
+                {/* <p>back</p>
+                <p>zoo2</p> */}
               </div>
               <div className="bookTable">
                 <form action="">
@@ -297,8 +297,8 @@ function VisitUs() {
               isFlipped={cards[2].isFlipped}
             >
               <div className="back" id="bannerghatta" onClick={() => flipCard(cards[2].id)}>
-                <p>back</p>
-                <p>zoo3</p>
+                {/* <p>back</p>
+                <p>zoo3</p> */}
               </div>
               <div className="bookTable">
                 <form action="">

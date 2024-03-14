@@ -1,16 +1,8 @@
 const express=require("express");
 const router=express.Router();
-const mysql = require('mysql');
+const db = require("../database/db");
 
-const db = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: '',
-    database: 'animaldb'
-})
-
-
-//router for creating user
+//router for creating user(signup)
 router.post("/signup",(req,res)=>{
     const sql="INSERT INTO users (`username`, `password_hash`, `email`) VALUES (?)";
     const values=[
@@ -28,14 +20,9 @@ router.post("/signup",(req,res)=>{
     })
 })
 
-
 //router for login
 router.post("/login",(req,res)=>{
     const sql="SELECT * FROM users where `email` =  ? AND `password_hash` = ?";
-    // const values=[
-    //     req.body.password_hash,
-    //     req.body.email
-    // ]
 
     db.query(sql,[req.body.email,req.body.password_hash],(err,data)=>{
         if(err){

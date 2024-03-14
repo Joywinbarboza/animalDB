@@ -52,6 +52,7 @@ function Login() {
       localStorage.setItem("email", login.email);
 
       // Redirect to home page
+      localStorage.setItem("show_orange", "");
       navigate("/");
     } else {
       alert("Name or Password is incorrect ;(");

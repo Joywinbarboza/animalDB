@@ -3,8 +3,8 @@ import ImageSlider from "../../Components/ImageSlider/ImageSlider.jsx";
 import "./Home.css";
 // import Book from "../../Test/Book.jsx";
 
-import LoginButton from "../../Components/loginGoogle/loginGoogle.jsx";
-import LogoutButton from "../../Components/logoutGoogle/logoutGoogle.jsx";
+// import LoginButton from "../../Components/loginGoogle/loginGoogle.jsx";
+// import LogoutButton from "../../Components/logoutGoogle/logoutGoogle.jsx";
 import { gapi } from "gapi-script";
 
 const clientId =
@@ -23,17 +23,17 @@ function Home() {
       .catch((err) => console.log(err));
 
 
-    fetch("http://localhost:8081/animal_mammals")
+    fetch("http://localhost:8081/home/animal_mammals")
       .then((res) => res.json())
       .then((data) => setAnimalMammals(data))
       .catch((err) => console.log(err));
 
-    fetch("http://localhost:8081/animal_reptiles")
+    fetch("http://localhost:8081/home/animal_reptiles")
       .then((res) => res.json())
       .then((data) => setAnimalreptiles(data))
       .catch((err) => console.log(err));
 
-      fetch("http://localhost:8081/animal_birds")
+      fetch("http://localhost:8081/home/animal_birds")
       .then((res) => res.json())
       .then((data) => setAnimalbirds(data))
       .catch((err) => console.log(err));
@@ -49,17 +49,6 @@ function Home() {
 
     gapi.load("client:auth2", start);
   });
-
-
-  // const slides = data.map((d, i) => ({
-  //   url: "/images/animals/" + d.image_path,
-  //   title: d.image_path, // Changed "Title" to "title" for consistency
-  // }));
-
-  // const slides2 = animal_mammals.map((d, i) => ({
-  //   url: "/" + d.image_path,
-  //   title: d.image_path, // Changed "Title" to "title" for consistency
-  // }));
 
   return (
     <>

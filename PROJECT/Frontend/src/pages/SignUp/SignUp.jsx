@@ -32,14 +32,15 @@ function SignUp() {
       const response = await axios.post(
         "http://localhost:8081/user/signup",
         signUp
-        );
-        console.log(response.data);
-        if(response.data.warningCount == 0)
-          navigate("/");
-      } catch (err) {
-        console.log(err);
+      );
+      console.log(response.data);
+      if (response.data.warningCount == 0) {
+        localStorage.setItem("show_orange", "");
+        navigate("/");
+      }
+    } catch (err) {
+      console.log(err);
     }
-
   }
 
   return (
@@ -80,7 +81,10 @@ function SignUp() {
             SIGN UP
           </button>
           <span className="signup-span">
-            Already have an account? <a onClick={navigateLogin} className="signup-link">Login</a>
+            Already have an account?{" "}
+            <a onClick={navigateLogin} className="signup-link">
+              Login
+            </a>
           </span>
         </form>
       </div>

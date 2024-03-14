@@ -14,12 +14,12 @@
         @apply px-5 py-2 text-white font-[900] tracking-wider text-[20px]
     }
 
-    .orange-select-options-container1{
+    .orange-select-options-container1,.orange-select-options-container2,.orange-select-options-container3{
         @apply flex justify-end
     }
 
-    .orange-select-options-container2>span{
-        @apply pl-6 text-[20px] text-black hover:text-green-200
+    .orange-select-options-container2>span,.orange-select-options-container3>span{
+        @apply pl-6 text-[20px] text-black hover:text-green-200 
     }
 }
 
@@ -31,5 +31,12 @@
     /* font-family: 'Lemon'; */
     font-family: Lexend;
 }
+
+.orange-select-options-container2{
+    /* font-family: 'Lemon'; */
+    font-family: Lexend;
+}
+
+
 
 

@@ -38,11 +38,11 @@ const ImageSlider = ({ slides }) => {
 
   const slideStylesWidthBackground = "slideStyles";
 
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     goToNext(currentIndex);
-  //   }, 5000);
-  // });
+  useEffect(() => {
+    setTimeout(() => {
+      goToNext(currentIndex);
+    }, 5000);
+  });
 
   if (!slides || slides.length === 0) {
     // If slides is not available or empty, you can return a loading message or null

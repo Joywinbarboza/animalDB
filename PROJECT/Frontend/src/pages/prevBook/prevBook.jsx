@@ -6,6 +6,23 @@ const PrevBook = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
+    async function pastBook() {
+      try {
+        // const email = localStorage.getItem("email");
+        const response = await axios.post(
+          "http://localhost:8081/visit/pastbook"
+        );
+
+        // Assuming setData is asynchronous and returns a promise
+        // await setData(response.data);
+
+        // Now you can safely log the updated data
+        // console.log(data);
+      } catch (error) {
+        console.error("Error:", error);
+      }
+    }
+
     async function fetchData() {
       try {
         const email = localStorage.getItem("email");
@@ -28,6 +45,7 @@ const PrevBook = () => {
       }
     }
 
+    pastBook();
     fetchData(); // Invoke the fetchData function directly within useEffect
   }, []);
 

@@ -38,6 +38,7 @@ function Donate() {
       .post("http://localhost:8081/donate-page/feedback", feedBack)
       .then((res) => {
         console.log("done");
+        alert("Thanks for your feedback!");
       });
 
       const response1 = await axios

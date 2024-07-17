@@ -92,6 +92,7 @@ function VisitUs() {
       .post("http://localhost:8081/visit/visitbook", bookPost)
       .then((res) => {
         console.log("done");
+        alert("booked successfully");
       });
 
     console.log(

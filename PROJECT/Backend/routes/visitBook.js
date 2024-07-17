@@ -118,14 +118,14 @@ router.delete("/deletevisitbook/:bookingId", (req, res) => {
 
 router.post("/pastbook", (req, res) => {
   const sql1 =
-    "INSERT INTO deleted_bookings SELECT * FROM bookings   WHERE booking_date < CURDATE();";
-  const sql2 = "DELETE FROM bookings WHERE booking_date < CURDATE();";
+    "INSERT INTO deleted_bookings SELECT * FROM bookingzoo1  WHERE booking_date < CURDATE();";
+  const sql2 = "DELETE FROM bookingzoo1 WHERE booking_date < CURDATE();";
 
   db.query(sql1, (err, data) => {
     if (err) {
       res.send(err);
     }
-    return res.json(data);
+    // return res.json(data);
   });
 
   db.query(sql2, (err, data) => {
